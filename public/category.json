@@ -1,0 +1,9 @@
+[
+    { "id": 1, "category": "All Products" },
+    { "id": 2, "category": "Laptop" },
+    { "id": 3, "category": "Smartphone" },
+    { "id": 4, "category": "Smartwatch" },
+    { "id": 5, "category": "Charger" },
+    { "id": 6, "category": "Power Bank" }
+  ]
+  
