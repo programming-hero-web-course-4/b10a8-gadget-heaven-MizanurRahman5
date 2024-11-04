@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { AiOutlineHeart } from "react-icons/ai";
+import { addToCart } from "../utility";
 
 const ProductDetails = () => {
   const data = useLoaderData();
@@ -21,6 +24,11 @@ const ProductDetails = () => {
     availability,
   } = product;
 
+  const handleAddToCart = (product) =>{
+    addToCart(product)
+   
+  }
+
   return (
     <div className="bg-purple-700 relative pb-64 flex text-white flex-col items-center justify-center gap-2">
       <h1 className="text-3xl font-bold">Product Details</h1>
@@ -32,7 +40,7 @@ const ProductDetails = () => {
         <div>
           <img className="rounded-3xl h-[400px]" src={product_image} alt="" />
         </div>
-        <div>
+        <div className="space-y-2">
           <h2 className="text-black">{product_title}</h2>
           <h4 className="text-black">Price : {price}</h4>
           <button className="btn btn-xs">{`${
@@ -78,6 +86,12 @@ const ProductDetails = () => {
               />
               <p className="text-black">{rating}</p>
             </div>
+          </div>
+          <div className="text-black flex items-center gap-3">
+            <div onClick={() => handleAddToCart(product)} className="flex items-center btn bg-purple-700 rounded-3xl">
+            <button>Add To Card</button> <MdOutlineShoppingCart />
+            </div>
+            <button className="btn rounded-3xl"><AiOutlineHeart /></button>
           </div>
         </div>
       </div>
