@@ -5,6 +5,7 @@ import Home from "../Pages/Home";
 import Dashboard from "../Pages/Dashboard";
 import Statistic from "../Pages/Statistic";
 import Products from "../component/Products";
+import ProductDetails from "../component/ProductDetails";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
                 }
             ]
                
+        },
+        {
+            path:'product/:productId',
+            element:<ProductDetails/>,
+            loader: () => fetch('/data.json')
         },
         {
             path:'/dashboard',

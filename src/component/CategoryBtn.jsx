@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const CategoryBtn = ({ category }) => {
-    console.log(category)
   return (
     <ul className="menu bg-white text-xl flex flex-col gap-4 w-56">
       {
