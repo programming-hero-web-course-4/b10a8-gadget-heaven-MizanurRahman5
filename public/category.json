@@ -1,5 +1,5 @@
 [
-    { "id": 1, "category": "All Products" },
+    { "id": 1, "category": "All" },
     { "id": 2, "category": "Laptop" },
     { "id": 3, "category": "Smartphone" },
     { "id": 4, "category": "Smartwatch" },

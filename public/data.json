@@ -1,0 +1,102 @@
+[
+    {
+      "product_id": "1",
+      "product_title": "Dell XPS 13",
+      "product_image": "https://5.imimg.com/data5/SELLER/Default/2023/6/317959998/EH/IO/KS/127677055/ecommerce-website-500x500.jpg",
+      "category": "Laptop",
+      "price": 1200,
+      "description": "A high-performance laptop with a stunning display.",
+      "Specification": ["13.3-inch FHD", "Intel i7", "16GB RAM", "512GB SSD"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "2",
+      "product_title": "MacBook Air M1",
+      "product_image": "https://www.shutterstock.com/image-photo/woman-purchasing-stunning-red-dress-600nw-2316156213.jpg",
+      "category": "Laptop",
+      "price": 999,
+      "description": "Apple's lightweight and powerful MacBook with M1 chip.",
+      "Specification": ["13-inch Retina", "Apple M1", "8GB RAM", "256GB SSD"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "3",
+      "product_title": "HP Spectre x360",
+      "product_image": "https://5.imimg.com/data5/IS/FL/XU/SELLER-94429866/deshee-jhadu-500x500.jpg",
+      "category": "Laptop",
+      "price": 1100,
+      "description": "Convertible laptop with 360-degree hinge and powerful features.",
+      "Specification": ["13.3-inch FHD", "Intel i7", "16GB RAM", "512GB SSD"],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "4",
+      "product_title": "Apple iPhone 13",
+      "product_image": "https://media.wired.com/photos/6148ef98a680b1f2086efee0/1:1/w_1037,h_1037,c_limit/Gear-Review-Apple_iphone13_hero_us_09142021.jpg",
+      "category": "Smartphone",
+      "price": 999,
+      "description": "The latest Apple iPhone with improved cameras and battery life.",
+      "Specification": ["6.1-inch display", "A15 Bionic chip", "128GB storage"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "5",
+      "product_title": "Samsung Galaxy S21",
+      "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/2101-34043.jpg",
+      "category": "Smartphone",
+      "price": 850,
+      "description": "Samsung's flagship phone with top-notch camera and display.",
+      "Specification": ["6.2-inch display", "Exynos 2100", "128GB storage"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "6",
+      "product_title": "Google Pixel 6",
+      "product_image": "https://www.custommacbd.com/cdn/shop/files/3784-23234.jpg?v=1687459730",
+      "category": "Smartphone",
+      "price": 799,
+      "description": "Google's latest smartphone with advanced AI capabilities.",
+      "Specification": ["6.4-inch OLED", "Google Tensor", "128GB storage"],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "7",
+      "product_title": "Apple Watch Series 7",
+      "product_image": "https://i5.walmartimages.com/seo/Apple-Watch-Series-7-GPS-45mm-Midnight-Aluminum-Case-with-Midnight-Sport-Band-Regular_d2cca1d2-a49a-4d21-b640-c50e7dfaf46d.786d7fb757f3937dc064c06bb782855e.jpeg",
+      "category": "Smartwatch",
+      "price": 399,
+      "description": "Apple's latest smartwatch with enhanced health features.",
+      "Specification": ["Always-on Retina display", "ECG and blood oxygen monitor", "GPS"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "8",
+      "product_title": "Samsung Galaxy Watch 4",
+      "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/3218-51839.jpg",
+      "category": "Smartwatch",
+      "price": 299,
+      "description": "Samsung's advanced smartwatch with Wear OS.",
+      "Specification": ["Super AMOLED display", "Heart-rate monitor", "GPS"],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "9",
+      "product_title": "Fitbit Versa 3",
+      "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/Fitbit-Versa-3-Smart-Watch-Black-9119.jpg",
+      "category": "Smartwatch",
+      "price": 229,
+      "description": "Versatile fitness tracker with GPS and heart-rate monitoring.",
+      "Specification": ["AMOLED display", "Built-in GPS", "Heart-rate monitor"],
+      "availability": true,
+      "rating": 4.4
+    }
+  ]
+  

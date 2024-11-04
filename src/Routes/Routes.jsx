@@ -5,7 +5,6 @@ import Home from "../Pages/Home";
 import Dashboard from "../Pages/Dashboard";
 import Statistic from "../Pages/Statistic";
 import Products from "../component/Products";
-import Laptop from "../component/Laptop";
 
 const router = createBrowserRouter([
     {
@@ -19,9 +18,19 @@ const router = createBrowserRouter([
             loader: () => fetch('../category.json'),
             children:[
                 {
+                    path:'/',
+                    element:<Products/>,
+                    loader: () => fetch('/data.json')
+                },
+                {
+                    path:'/category/All',
+                    element:<Products/>,
+                    loader: () => fetch('/data.json')
+                },
+                {
                     path:'/category/:category',
-                    element:<Laptop/>
-
+                    element:<Products/>,
+                    loader: () => fetch('/data.json')
                 }
             ]
                
