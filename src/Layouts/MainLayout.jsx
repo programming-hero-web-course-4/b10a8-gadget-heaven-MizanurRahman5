@@ -12,7 +12,7 @@ const MainLayout = () => {
             {/* navbar */}
             <Navbar></Navbar>
             {/* dynamic */}
-            <div className='min-h-screen'>
+            <div className='min-h-[500px]'>
                 <Outlet/>
             </div>
             {/* footer */}

@@ -41,7 +41,8 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="bg-purple-700 relative pb-64 flex text-white flex-col items-center justify-center gap-2">
+    <div className="min-h-[600px]">
+      <div className="bg-purple-700 mt-20 pb-64 relative  flex text-white flex-col items-center justify-center gap-2">
       <h1 className="text-3xl font-bold">Product Details</h1>
       <p className="max-w-[750px] text-center">
         Explore the latest gadgets that will take your experience to the next
@@ -84,6 +85,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

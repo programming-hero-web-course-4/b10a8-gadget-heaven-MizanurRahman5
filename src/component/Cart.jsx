@@ -8,7 +8,7 @@ const Cart = () => {
     const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate();
-
+ 
     useEffect(() => {
         const fetchProducts = async () => {
             setLoading(true);
@@ -40,10 +40,11 @@ const Cart = () => {
         localStorage.removeItem("product");
         // Clear the cart in the state
         setCartProduct([]);
-        navigate('/'); // Redirect to home page
+        navigate('/');
     };
+    console.log(cartProduct)
 
-    // Function to sort products by price in descending order
+    
     const handleSortByPrice = () => {
         const sortedProducts = [...cartProduct].sort((a, b) => b.price - a.price);
         setCartProduct(sortedProducts);

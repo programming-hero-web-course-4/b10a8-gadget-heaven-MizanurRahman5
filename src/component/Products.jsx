@@ -23,8 +23,8 @@ const Products = () => {
     }, [category, data]);
 
     return (
-        <div>
-            <div className='text-3xl mb-4'>Explore Cutting-Edge Gadgets</div>
+        <div className='ml-5'>
+            <div className='text-4xl font-bold mb-10'>Explore Cutting-Edge Gadgets</div>
             {products.length > 0 ? (
                 <div className='grid md:grid-cols-3 ml-2 gap-3'>
                     {products.map((product) => (

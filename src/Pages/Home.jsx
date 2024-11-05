@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
       <Banner/>
-      <div className="md:w-[1280px] mx-auto flex mt-[500px]">
+      <div className="md:w-[1280px] mx-auto md:flex mt-[400px]">
         <CategoryBtn category={category}/>
         <ProductsCard/>
         <Outlet></Outlet>
