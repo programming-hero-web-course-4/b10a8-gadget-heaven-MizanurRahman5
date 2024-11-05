@@ -31,7 +31,8 @@ const addToCart = (newProduct) => {
 // Remove product from local storage
 const removeFromCart = (productId) => {
     const products = getAllProducts();
-    const updatedProducts = products.filter((item) => item.id !== productId);
+    console.log(products)
+    const updatedProducts = products.filter((item) => item.product_id !== productId);
 
     if (updatedProducts.length === products.length) {
         // No product was removed
