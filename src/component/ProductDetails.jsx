@@ -8,11 +8,12 @@ const ProductDetails = () => {
   const data = useLoaderData();
   const { productId } = useParams();
   const [product, setProducts] = useState({});
-  
+  const [isInWishlistState, setIsInWishlistState] = useState(false); 
 
   useEffect(() => {
     const singleData = data.find((product) => product.product_id == productId);
     setProducts(singleData);
+    setIsInWishlistState(isInWishlist(singleData.product_id)); 
   }, [data, productId]);
 
   const {
@@ -25,17 +26,19 @@ const ProductDetails = () => {
     availability,
   } = product;
 
-  const handleAddToCart = (product) =>{
-    addToCart(product)
-   
-  }
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
 
+  const handleAddToWishlist = (product) => {
+    addToWishlist(product);
+    setIsInWishlistState(true);
+  };
 
-const handleAddToWishlist = (product) => {
-  addToWishlist(product);
-};
-
-
+  const isInWishlist = (productId) => {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    return wishlist.some(item => item.product_id === productId);
+  };
 
   return (
     <div className="bg-purple-700 relative pb-64 flex text-white flex-col items-center justify-center gap-2">
@@ -50,10 +53,8 @@ const handleAddToWishlist = (product) => {
         </div>
         <div className="space-y-2">
           <h2 className="text-black">{product_title}</h2>
-          <h4 className="text-black">Price : {price}</h4>
-          <button className="btn btn-xs">{`${
-            availability ? "In Stock" : "Out of Stock"
-          }`}</button>
+          <h4 className="text-black">Price: {price}</h4>
+          <button className="btn btn-xs">{availability ? "In Stock" : "Out of Stock"}</button>
           <p className="text-black">{description}</p>
           <div>
             <h4 className="text-black">Specification:</h4>
@@ -63,43 +64,23 @@ const handleAddToWishlist = (product) => {
               ))}
             </ul>
           </div>
-          <h2 className="text-black font-bold text-xl">Rating :</h2>
+          <h2 className="text-black font-bold text-xl">Rating:</h2>
           <div className="flex">
             <div className="rating">
-              <input
-                type="radio"
-                name={rating}
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-                defaultChecked
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
               <p className="text-black">{rating}</p>
             </div>
           </div>
           <div className="text-black flex items-center gap-3">
             <div onClick={() => handleAddToCart(product)} className="flex items-center btn bg-purple-700 rounded-3xl">
-            <button>Add To Card</button> <MdOutlineShoppingCart />
+              <button>Add To Cart</button> <MdOutlineShoppingCart />
             </div>
-            <button onClick={() => handleAddToWishlist(product)} className="btn rounded-3xl"><AiOutlineHeart /></button>
+            <button
+              onClick={() => handleAddToWishlist(product)}
+              className="btn rounded-3xl"
+              disabled={isInWishlistState} // Disable if added to wishlist
+            >
+              <AiOutlineHeart />
+            </button>
           </div>
         </div>
       </div>
