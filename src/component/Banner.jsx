@@ -1,5 +1,6 @@
 import React from "react";
 import bannerImg from "../assets/banner.jpg";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -15,9 +16,9 @@ const Banner = () => {
             next level. From smart devices to the coolest accessories, we have
             it all!
           </p>
-          <button className="btn bg-white text-black rounded-3xl">
+          <Link to='/dashboard'><button className="btn bg-white text-black rounded-3xl">
             Shop Now
-          </button>
+          </button></Link>
         </div>
         <div className="absolute flex rounded-[40px] items-center border-2 justify-center top-72">
           <img className="w-full h-[500px] p-4 rounded-[40px]" src={bannerImg} alt="" />

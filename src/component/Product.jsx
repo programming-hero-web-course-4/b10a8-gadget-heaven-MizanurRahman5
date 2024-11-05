@@ -12,7 +12,7 @@ const Product = ({ product }) => {
           </figure>
           <div className="card-body ">
             <h2 className="card-title">{product_title}</h2>
-            <p>Price : {price}</p>
+            <p>Price : {price}$</p>
             <div className="">
               <Link to={`/product/${product_id}`}><button className="btn btn-primary">View details</button></Link>
             </div>

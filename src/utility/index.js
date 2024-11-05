@@ -44,4 +44,43 @@ const removeFromCart = (productId) => {
     toast.success("Product removed successfully.");
 };
 
-export { addToCart, getAllProducts, removeFromCart };
+
+
+
+const getAllWishlistProducts = () => {
+    const allWishlistProducts = localStorage.getItem("wishlist");
+    return allWishlistProducts ? JSON.parse(allWishlistProducts) : [];
+};
+
+// Wishlist-এ প্রোডাক্ট যোগ করা
+const addToWishlist = (newProduct) => {
+    const wishlistProducts = getAllWishlistProducts();
+
+    // চেক করা যদি প্রোডাক্ট আগেই থাকে
+    const isExist = wishlistProducts.some((item) => item.product_id === newProduct.product_id);
+
+    if (isExist) {
+        toast.error("Product already in wishlist.");
+        return;
+    }
+
+    wishlistProducts.push(newProduct);
+    localStorage.setItem("wishlist", JSON.stringify(wishlistProducts));
+    toast.success("Product added to wishlist!");
+};
+
+// Wishlist থেকে প্রোডাক্ট রিমুভ করা
+const removeFromWishlist = (productId) => {
+    const wishlistProducts = getAllWishlistProducts();
+    const updatedWishlist = wishlistProducts.filter((item) => item.product_id !== productId);
+
+    if (updatedWishlist.length === wishlistProducts.length) {
+        toast.error("Product not found in wishlist.");
+        return;
+    }
+
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    toast.success("Product removed from wishlist.");
+};
+
+export { addToCart, getAllProducts, removeFromCart, addToWishlist, getAllWishlistProducts, removeFromWishlist  };

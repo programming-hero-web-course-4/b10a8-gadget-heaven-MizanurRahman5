@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
-import { addToCart } from "../utility";
+import { addToCart, addToWishlist } from "../utility";
 
 const ProductDetails = () => {
   const data = useLoaderData();
   const { productId } = useParams();
   const [product, setProducts] = useState({});
+  
 
   useEffect(() => {
     const singleData = data.find((product) => product.product_id == productId);
@@ -28,6 +29,13 @@ const ProductDetails = () => {
     addToCart(product)
    
   }
+
+
+const handleAddToWishlist = (product) => {
+  addToWishlist(product);
+};
+
+
 
   return (
     <div className="bg-purple-700 relative pb-64 flex text-white flex-col items-center justify-center gap-2">
@@ -91,7 +99,7 @@ const ProductDetails = () => {
             <div onClick={() => handleAddToCart(product)} className="flex items-center btn bg-purple-700 rounded-3xl">
             <button>Add To Card</button> <MdOutlineShoppingCart />
             </div>
-            <button className="btn rounded-3xl"><AiOutlineHeart /></button>
+            <button onClick={() => handleAddToWishlist(product)} className="btn rounded-3xl"><AiOutlineHeart /></button>
           </div>
         </div>
       </div>

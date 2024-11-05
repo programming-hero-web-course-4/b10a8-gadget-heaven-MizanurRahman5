@@ -5,6 +5,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 const Cart = () => {
     const [cartProduct, setCartProduct] = useState([]);
     const [loading, setLoading] = useState(true);
+    
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -20,15 +21,18 @@ const Cart = () => {
         removeFromCart(id)
         setCartProduct(prevProducts => prevProducts.filter(product => product.product_id !== id));
     }
+    const calculateTotalCost = () => {
+        return cartProduct.reduce((total, product) => total + product.price, 0).toFixed(2);
+    };
     
     return (
-        <div className='md:w-[1280px] mx-auto flex flex-col'>
+        <div className='md:w-[1280px] mx-auto mt-3 flex flex-col'>
             <div className='flex items-center justify-between mb-4'>
                 <div className='text-2xl font-bold'>Cart</div>
                 <div className='flex items-center gap-3'>
-                    <h2 className='text-xl font-bold'>Total cost :</h2>
-                    <button className='btn hover:bg-purple-700 hover:text-white rounded-3xl'>Sort by Price</button>
-                    <button className='btn hover:bg-purple-700 hover:text-white rounded-3xl'>Purchase</button>
+                <h2 className='text-xl font-bold'>Total cost: ${calculateTotalCost()}</h2>
+                    <button className='btn border-purple-600 hover:bg-purple-700 hover:text-white rounded-3xl'>Sort by Price</button>
+                    <button className='btn border-purple-600 hover:bg-purple-700 hover:text-white rounded-3xl'>Purchase</button>
                 </div>
             </div>
 
@@ -39,7 +43,7 @@ const Cart = () => {
                     <div className='flex gap-3 mb-2 p-3 bg-white rounded-lg items-center justify-between border-b py-4' key={product.id}>
                         <div className='flex gap-3'>
                         <div>
-                            <img className='w-32 rounded-lg' src={product.product_image} alt="" />
+                            <img className='w-32 h-28 rounded-lg' src={product.product_image} alt="" />
                         </div>
                         <div><h2 className='text-lg font-semibold'>{product.product_title}</h2>
                         <p>{product.description}</p>
