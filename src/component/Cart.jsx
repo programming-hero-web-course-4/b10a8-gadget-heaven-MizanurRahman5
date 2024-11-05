@@ -36,13 +36,10 @@ const Cart = () => {
 
     const handleCloseModal = () => {
         setIsModalOpen(false);
-        // Clear the cart from local storage
         localStorage.removeItem("product");
-        // Clear the cart in the state
         setCartProduct([]);
         navigate('/');
     };
-    console.log(cartProduct)
 
     
     const handleSortByPrice = () => {

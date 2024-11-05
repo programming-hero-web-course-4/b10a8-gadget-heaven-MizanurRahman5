@@ -28,6 +28,7 @@ const Navbar = () => {
       <li><NavLink to='/' className={`${isHomePage ? 'text-white' : 'text-gray-700'}`}>Home</NavLink></li>
       <li><NavLink to='/statistic' className={`${isHomePage ? 'text-white' : 'text-gray-700'}`}>Statistic</NavLink></li>
       <li><NavLink to='/dashboard' className={`${isHomePage ? 'text-white' : 'text-gray-700'}`}>Dashboard</NavLink></li>
+      <li><NavLink to='/overview' className={`${isHomePage ? 'text-white' : 'text-gray-700'}`}>Review</NavLink></li>
     </>
   );
 

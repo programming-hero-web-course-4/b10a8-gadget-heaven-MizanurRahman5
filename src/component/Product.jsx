@@ -6,9 +6,9 @@ const Product = ({ product }) => {
   return (
     <div>
       
-        <div className="card bg-base-100">
-          <figure className="px-10 pt-10">
-            <img src={product_image} alt="Shoes" className="rounded-xl" />
+        <div className="card h-[400px] bg-base-100">
+          <figure className="px-10 object-cover pt-10">
+            <img src={product_image} alt="Shoes" className="rounded-xl " />
           </figure>
           <div className="card-body ">
             <h2 className="card-title">{product_title}</h2>

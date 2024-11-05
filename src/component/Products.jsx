@@ -26,7 +26,7 @@ const Products = () => {
         <div className='ml-5'>
             <div className='text-4xl font-bold mb-10'>Explore Cutting-Edge Gadgets</div>
             {products.length > 0 ? (
-                <div className='grid md:grid-cols-3 ml-2 gap-3'>
+                <div className='grid md:grid-cols-3 ml-2 gap-4'>
                     {products.map((product) => (
                         <Product key={product.id} product={product} />
                     ))}

@@ -8,6 +8,7 @@ import Products from "../component/Products";
 import ProductDetails from "../component/ProductDetails";
 import Cart from "../component/Cart";
 import Wishlist from "../component/Wishlist";
+import Overview from "../Pages/Testimonials";
 
 const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
             {
                 path: 'statistic',
                 element: <Statistic />
+            },
+            {
+                path:'overview',
+                element:<Overview/>
             }
         ]
     },
