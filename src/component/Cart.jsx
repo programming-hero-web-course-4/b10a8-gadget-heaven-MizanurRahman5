@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getAllProducts, removeFromCart } from '../utility';
 import { TiDeleteOutline } from "react-icons/ti";
 import { useNavigate } from 'react-router-dom';
+import shortBypriceLogo from '../assets/Frame.png'
 
 const Cart = () => {
     const [cartProduct, setCartProduct] = useState([]);
@@ -57,7 +58,7 @@ const Cart = () => {
                         onClick={handleSortByPrice}
                         className='btn border-purple-600 hover:bg-purple-700 hover:text-white rounded-3xl'
                     >
-                        Sort by Price
+                        Sort by Price <img className='w-7' src={shortBypriceLogo} alt="" />
                     </button>
                     <button 
                         onClick={handlePurchase}

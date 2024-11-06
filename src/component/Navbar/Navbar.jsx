@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
-import { getAllProducts } from '../../utility/index';
+import { getAllProducts, getAllWishlistProducts } from '../../utility/index';
 
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
+  const [wishlistCount, setWishlistCount] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,10 +18,20 @@ const Navbar = () => {
         console.error("Error fetching products:", error);
       }
     };
+
+    const fetchWishlist = async () => {
+      try {
+        const wishlist = await getAllWishlistProducts();
+        setWishlistCount(wishlist.length);
+      } catch (error) {
+        console.error("Error fetching wishlist:", error);
+      }
+    };
+
     fetchProducts();
+    fetchWishlist();
   }, []);
 
-  // Check if the current route is the home page
   const isHomePage = location.pathname === "/";
 
   const link = (
@@ -47,12 +58,17 @@ const Navbar = () => {
           <Link to='/dashboard/cart'>
             <button className="relative text-2xl border p-2 rounded-full">
               <MdOutlineShoppingCart className={`${isHomePage ? 'text-white' : 'text-gray-700'}`} />
-              {cartCount >= 0 && (
+              {cartCount > 0 && (
                 <span className="absolute -top-1 -right-2 text-xs bg-red-500 text-white rounded-full px-1">{cartCount}</span>
               )}
             </button>
           </Link>
-          <button className={`text-2xl border p-2 rounded-full ${isHomePage ? 'text-white' : 'text-gray-700'}`}><AiOutlineHeart /></button>
+          <button className="relative text-2xl border p-2 rounded-full">
+            <AiOutlineHeart className={`${isHomePage ? 'text-white' : 'text-gray-700'}`} />
+            {wishlistCount > 0 && (
+              <span className="absolute -top-1 -right-2 text-xs bg-red-500 text-white rounded-full px-1">{wishlistCount}</span>
+            )}
+          </button>
         </div>
       </div>
     </div>

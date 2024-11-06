@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Testimonials = () => {
   const testimonials = [
@@ -30,6 +31,10 @@ const Testimonials = () => {
 
   return (
     <div className="py-12 mt-20 px-6 md:px-12 lg:px-24">
+       <Helmet>
+        <title>Gadget Heaven - Review</title>
+        <meta name="description" content="Welcome to Gadget Heaven, your one-stop shop for all the latest gadgets." />
+      </Helmet>
       <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
         What Our Users Say
       </h2>
