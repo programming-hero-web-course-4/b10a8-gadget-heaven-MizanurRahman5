@@ -32,7 +32,7 @@ const ProductDetails = () => {
 
   const handleAddToWishlist = (product) => {
     addToWishlist(product);
-    setIsInWishlistState(true);
+    setIsInWishlistState(true); 
   };
 
   const isInWishlist = (productId) => {
@@ -42,7 +42,7 @@ const ProductDetails = () => {
 
   return (
     <div className="min-h-[600px]">
-      <div className="bg-purple-700 mt-20 pb-64 relative  flex text-white flex-col items-center justify-center gap-2">
+      <div className="bg-purple-700 mt-20 pb-64 relative flex text-white flex-col items-center justify-center gap-2">
         <h1 className="text-3xl font-bold">Product Details</h1>
         <p className="max-w-[750px] text-center">
           Explore the latest gadgets that will take your experience to the next
@@ -53,7 +53,9 @@ const ProductDetails = () => {
             <img className="rounded-3xl h-[400px]" src={product_image} alt="" />
           </div>
           <div className="space-y-2">
-            <h2 className="text-black text-xl font-semibold">{product_title}</h2>
+            <h2 className="text-black text-xl font-semibold">
+              {product_title}
+            </h2>
             <h4 className="text-black">Price: ${price}</h4>
             <button className="btn btn-xs bg-green-300 border-green-600">
               {availability ? "In Stock" : "Out of Stock"}
@@ -70,8 +72,8 @@ const ProductDetails = () => {
               </ul>
             </div>
             <h2 className="text-black font-bold text-xl">Rating:</h2>
-            <div className="flex ml-[-50px] gap-3 items-center justify-start">
-              <dir>
+            <div className="flex gap-3 items-center justify-start">
+              <div>
                 <div className="rating">
                   <input
                     type="radio"
@@ -100,7 +102,7 @@ const ProductDetails = () => {
                     className="mask mask-star-2 bg-orange-400"
                   />
                 </div>
-              </dir>
+              </div>
               <div className="rating">
                 <p className="text-black">{rating}</p>
               </div>
@@ -114,10 +116,11 @@ const ProductDetails = () => {
               </div>
               <button
                 onClick={() => handleAddToWishlist(product)}
-                className="btn rounded-3xl"
-                disabled={isInWishlistState} // Disable if added to wishlist
+                className={`btn rounded-3xl ${isInWishlistState ? "bg-gray-400" : "bg-red-500"}`}
+                disabled={isInWishlistState} 
               >
                 <AiOutlineHeart />
+                {isInWishlistState && "Added to Wishlist"}
               </button>
             </div>
           </div>

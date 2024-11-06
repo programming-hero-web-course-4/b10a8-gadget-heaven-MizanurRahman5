@@ -6,7 +6,7 @@
 [Visit the Live Website](https://a8-gadget-heaven.netlify.app/)
 
 ## Requirement Document Link
-[View the Requirement Document](file:///D:/milston%208%20react%20router/B10-A8-gadget-heaven/Batch-10_Assignment-08.pdf)
+[View the Requirement Document](https://drive.google.com/file/d/1pMNFkHD5iUp4ZWk28uwGqMk7R4eFiXN3/view?usp=sharing)
 
 ---
 

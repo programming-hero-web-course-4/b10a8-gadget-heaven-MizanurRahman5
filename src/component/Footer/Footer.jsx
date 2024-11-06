@@ -4,11 +4,11 @@ const Footer = () => {
   return (
     <div className="bg-white mt-8">
       <footer className="footer md:w-[1280px] gap-3 mx-auto flex flex-col items-center text-black p-10 space-y-2">
-        
-        
         <div className="text-center md:w-[1280px] flex flex-col border-b items-center justify-center">
-        <h1 className="text-3xl font-semibold">Gadget Heaven</h1>
-        <p className="mb-4">Leading the way in cutting-edge technology and innovation.</p>
+          <h1 className="text-3xl font-semibold">Gadget Heaven</h1>
+          <p className="mb-4">
+            Leading the way in cutting-edge technology and innovation.
+          </p>
         </div>
 
         <div className="w-full flex text-[#09080f99]  flex-wrap justify-around">
